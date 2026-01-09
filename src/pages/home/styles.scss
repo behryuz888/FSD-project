@@ -1,0 +1,329 @@
+@use "../../app/styles/variables" as *;
+@use "../../app/styles/breakpoints" as *;
+
+.home {
+    .popular-category {
+        padding: 60px 60px 40px 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 52px;
+
+        @media (max-width: $breakpoint-xl) {
+            padding: 60px 30px 40px 30px;
+        }
+
+
+        @media (max-width: $breakpoint-lg) {
+            padding: 35px 15px 15px 15px;
+        }
+
+        .popularCategory-title {
+            display: flex;
+            align-items: center;
+            gap: 30px;
+
+            @media (max-width: $breakpoint-md) {
+                gap: 18px;
+            }
+
+            .populars-span {
+                font-weight: 700;
+                font-size: 28px;
+                line-height: 34.6px;
+                letter-spacing: 5%;
+                text-transform: uppercase;
+                color: $color-brand-red;
+
+                @media (max-width: $breakpoint-md) {
+                    font-size: 20px;
+                }
+            }
+
+            .populars-image {
+                @media (max-width: $breakpoint-md) {
+                    width: 39px;
+                    height: 49px;
+                }
+            }
+        }
+
+        .popularCategory-wrapCards {
+            display: grid;
+            grid-gap: 30px;
+            grid-template-columns: repeat(auto-fill, minmax(320px, 1fr));
+            overflow: hidden;
+
+            .popularCategory-card-one {
+                padding: 30px 20px;
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                aspect-ratio: 2 / 1;
+                background-repeat: no-repeat;
+                background-color: $color-card-background;
+                background-size: contain;
+
+                .popularCategory-cardSpan {
+                    bottom: 16px;
+                    position: absolute;
+                    max-width: 170px;
+                    font-style: normal;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 1.5;
+                    color: $color-dark;
+                    display: flex;
+                    width: 50%;
+                }
+
+                .popularCategory-productImage {
+                    position: absolute;
+                    right: 16px;
+                    bottom: 10px;
+                }
+            }
+
+            .popularCategory-card-two {
+                padding: 30px 20px;
+                position: relative;
+                overflow: hidden;
+                width: 100%;
+                aspect-ratio: 2 / 1;
+                background-repeat: no-repeat;
+                background-color: $color-card-background;
+                background-size: contain;
+
+                .popularCategory-cardSpan {
+                    position: absolute;
+                    top: 16px;
+                    max-width: 170px;
+                    font-weight: 500;
+                    font-size: 20px;
+                    line-height: 1.5;
+                    color: $color-dark;
+                    right: 16px;
+                }
+
+                .popularCategory-productImage {
+                    position: absolute;
+                    left: 16px;
+                    bottom: 10px;
+                    transform: scaleX(-1);
+                }
+            }
+        }
+    }
+
+    .new-products {
+        padding: 60px 60px 40px 60px;
+        display: flex;
+        flex-direction: column;
+        gap: 52px;
+
+        @media (max-width: $breakpoint-xl) {
+            padding: 60px 30px 40px 30px;
+        }
+
+        @media (max-width: $breakpoint-lg) {
+            padding: 35px 15px 15px 15px;
+        }
+
+        .newProduct-title {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+
+            @media (max-width: $breakpoint-md) {
+                flex-direction: column;
+                align-items: start;
+                gap: 18px;
+            }
+
+            .newProduct-titleDescription {
+                display: flex;
+                align-items: center;
+                gap: 30px;
+
+                @media (max-width: $breakpoint-md) {
+                    gap: 18px;
+                }
+
+                .newTitle-span {
+                    font-weight: 700;
+                    font-size: 28px;
+                    line-height: 34.6px;
+                    text-transform: uppercase;
+                    color: $color-brand-red;
+                    position: relative;
+                    top: 12.5px;
+
+                    @media (max-width: $breakpoint-md) {
+                        font-size: 20px;
+                    }
+                }
+
+                .newTitle-image {
+                    max-width: 73px;
+                    height: 70px;
+
+                    @media (max-width: $breakpoint-md) {
+                        width: 56px;
+                        height: 53px;
+                    }
+                }
+            }
+
+            .newProduct-allProducts {
+                font-weight: 500;
+                font-size: 20px;
+                line-height: 18px;
+                color: $color-dark;
+                min-width: 248px;
+                height: 64px;
+                background-color: transparent;
+                border: 1px solid rgba(0, 0, 0, .3);
+
+                @media (max-width: $breakpoint-md) {
+                    min-width: 160px;
+                    height: 40px;
+                    font-size: 13px;
+                }
+            }
+        }
+
+        .newProducts-feedWrapper {
+            display: grid;
+            grid-template-columns: repeat(auto-fill, minmax(380px, 1fr));
+
+            @media (max-width: $breakpoint-md) {
+                display: flex;
+                overflow: auto;
+            }
+
+            a {
+                .new-product {
+                    display: flex;
+                    flex-direction: column;
+                    padding: 20px;
+                    position: relative;
+                    height: 100%;
+                    border: 1px solid #bebebe;
+
+                    .product-additionals {
+                        display: flex;
+                        flex-direction: column;
+                        gap: 12px;
+                        align-items: center;
+                        position: absolute;
+                        right: 16px;
+                        top: 16px;
+                    }
+
+                    .product-imgWrapper {
+                        display: flex;
+                        justify-content: center;
+
+                        img {
+                            width: 100%;
+                            @media (max-width: $breakpoint-md) {
+                                height: 200px;
+                            }
+                        }
+                    }
+
+                    .product-wrapCart {
+                        display: flex;
+                        flex-direction: column;
+                        justify-items: end;
+                        height: 100%;
+
+                        .product-information {
+                            display: flex;
+                            flex-direction: column;
+                            gap: .5em;
+                            text-align: left;
+                            margin-bottom: .5em;
+                            height: 100%;
+                            max-height: 5em;
+                            font-size: 16px;
+                            line-height: 1.5;
+
+                            span {
+                                font-weight: 400;
+                                color: $color-dark;
+                            }
+
+                            p {
+                                font-weight: 600;
+                                color: $color-dark;
+                                display: -webkit-box;
+                                -webkit-box-orient: vertical;
+                                overflow: hidden;
+                                min-height: 3em;
+                                line-height: 1.5;
+                            }
+                        }
+
+                        .product-cartPrice {
+                            display: flex;
+                            align-items: end;
+                            justify-content: space-between;
+                            margin-top: 36px;
+
+                            @media (max-width: $breakpoint-md) {
+                                gap: 10px;
+                                align-items: start;
+                                flex-direction: column;
+                                width: 100%;
+                            }
+
+                            span {
+                                font-style: normal;
+                                font-weight: 600;
+                                font-size: 20px;
+                                line-height: 1;
+                                color: $color-dark;
+
+                                @media (max-width: $breakpoint-md) {
+                                    display: flex;
+                                    gap: 6px;
+                                    font-size: 15px;
+                                    align-items: baseline;
+                                }
+
+                                p {
+                                    color: $color-brand-red;
+                                    font-weight: 600;
+                                    font-size: 20px;
+                                }
+                            }
+
+                            button {
+                                min-width: 110px;
+                                height: 53px;
+                                background-color: $color-brand-red;
+                                font-style: normal;
+                                font-weight: 700;
+                                font-size: 15px;
+                                border: none;
+                                outline: none;
+                                line-height: 18px;
+                                white-space: nowrap;
+                                color: $color-white;
+                                cursor: pointer;
+
+
+                                @media (max-width: $breakpoint-md) {
+                                    display: flex;
+                                    align-items: center;
+                                    justify-content: center;
+                                    width: 100%;
+                                }
+                            }
+                        }
+                    }
+                }
+            }
+        }
+    }
+}
