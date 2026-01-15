@@ -1,8 +1,9 @@
 import "./app/styles/index.scss";
 import { Header } from "./widgets/header/ui";
 import { Footer } from "./widgets/footer/ui";
-import { initSidebar } from "./widgets/header/sidebar.js";
-import { renderPage } from "./app/router.js";
+import { initSidebar } from "./widgets/header/sidebar";
+import { initHeaderNavigation } from "./widgets/header/navigation";
+import { renderPage } from "./app/router";
 
 document.querySelector("#app").innerHTML = `
   ${Header()}
@@ -12,3 +13,4 @@ document.querySelector("#app").innerHTML = `
 
 renderPage();
 initSidebar();
+initHeaderNavigation();

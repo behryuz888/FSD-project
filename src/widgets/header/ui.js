@@ -18,7 +18,7 @@ export function Header() {
         </div>
       </header>
       <nav class="navbar">
-        <span class="nav-section">Для геймеров</span>
+        <span class="nav-section" data-route="/categories/for-gamers">Для геймеров</span>
         <span class="nav-section">Смартфоны и гаджеты</span>
         <span class="nav-section">Компьютеры и ноутбуки</span>
         <span class="nav-section">Комплектующие для ПК</span>

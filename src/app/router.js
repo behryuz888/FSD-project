@@ -1,17 +1,18 @@
 import { HomePage } from "../pages/home";
 import { NotFoundPage } from "../pages/notFound";
 import { Product } from "../pages/product";
+import { ForGamersUI } from "../pages/categories/forGamers/ui";
 
 const routes = {
   "/": HomePage,
   "/home": HomePage,
   "/productPage": Product,
+  "/categories/for-gamers": ForGamersUI,
 };
 
 export function router() {
   const path = window.location.pathname;
   const Page = routes[path] || NotFoundPage;
-  console.log(window.location);
   return Page();
 }
 
@@ -24,7 +25,4 @@ export function navigate(path) {
   renderPage();
 }
 
-window.addEventListener('popstate', () => {
-  console.log('Popstate event triggered');
-  renderPage();
-});
+window.addEventListener("popstate", renderPage);
